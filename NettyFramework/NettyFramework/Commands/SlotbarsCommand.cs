@@ -5,7 +5,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarsCommand
     {
-        public const short ID = 10437;
+        public const short ID = 30198;
 
         public static byte[] write(List<SlotbarCategoryModule> categories, string varnz, List<SlotbarQuickslotModule> slotBars)
         {
@@ -15,13 +15,12 @@ namespace NettyFramework.Commands
             {
                 cmd.AddBytes(c.write());
             }
-            cmd.writeShort(7085);
-            cmd.writeUTF(varnz);
             cmd.writeInt(slotBars.Count);
             foreach (var c in slotBars)
             {
                 cmd.AddBytes(c.write());
             }
+            cmd.writeUTF(varnz);
             return cmd.ToByteArray();
         }
     }

@@ -5,7 +5,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarCategoryModule
     {
-        public const short ID = 21275;
+        public const short ID = 16810;
 
         public string name;
         public List<SlotbarCategoryItemModule> items;
@@ -24,7 +24,7 @@ namespace NettyFramework.Commands
             {
                 cmd.AddBytes(c.write());
             }
-            cmd.writeShort(-25751);
+            cmd.writeShort(8139);
             cmd.writeUTF(name);
             return cmd.Message.ToArray();
         }

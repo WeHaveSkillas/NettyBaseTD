@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class commandF5
     {
-        public const short ID = 23340;
+        public const short ID = 9364;
 
         public string replacement = "";
 
@@ -23,9 +23,10 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
-            cmd.writeUTF(replacement);
             cmd.AddBytes(vare23.write());
-            cmd.writeUTF(wildcard);
+            cmd.writeUTF(this.wildcard);
+            cmd.writeShort(28238);
+            cmd.writeUTF(this.replacement);
             return cmd.Message.ToArray();
         }
     }

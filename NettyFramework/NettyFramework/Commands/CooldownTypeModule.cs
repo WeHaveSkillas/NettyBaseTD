@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class CooldownTypeModule
     {
-        public const short ID = 3004;
+        public const short ID = 4201;
 
         public static short ENERGY_CHAIN_IMPULSE = 14;
         public static short varY8 = 24;
@@ -52,6 +52,8 @@ namespace NettyFramework.Commands
         public static short vare7 = 44;
         public static short varK2H = 23;
         public static short varFn = 21;
+        public static short varc1n = 46;
+        public static short varZ11 = 47;
 
         public short value;
 
@@ -64,8 +66,7 @@ namespace NettyFramework.Commands
         {
             var cmd = new ByteArray(ID);
             cmd.writeShort(value);
-            cmd.writeShort(-6047);
-            cmd.writeShort(9032);
+            cmd.writeShort(-14430);
             return cmd.Message.ToArray();
         }
 

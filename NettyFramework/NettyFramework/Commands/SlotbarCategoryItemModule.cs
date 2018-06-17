@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarCategoryItemModule
     {
-        public const short ID = 6896;
+        public const short ID = 19838;
 
         public static short c3O = 0;
         public static short Rb = 1;
@@ -21,8 +21,9 @@ namespace NettyFramework.Commands
         public CooldownTypeModule varB3M;
         public short counterType = 0;
         public short actionStyle = 0;
+        public bool showTooltipCooldownTimer;
 
-        public SlotbarCategoryItemModule(int Id, SlotbarItemStatus status, SlotbarCategoryItemTimerModule timer, CooldownTypeModule varB3M, short counterType, short actionStyle)
+        public SlotbarCategoryItemModule(int Id, SlotbarItemStatus status, SlotbarCategoryItemTimerModule timer, CooldownTypeModule varB3M, short counterType, short actionStyle, bool showTooltipCooldownTimer)
         {
             this.Id = Id;
             this.status = status;
@@ -30,18 +31,21 @@ namespace NettyFramework.Commands
             this.varB3M = varB3M;
             this.counterType = counterType;
             this.actionStyle = actionStyle;
+            this.showTooltipCooldownTimer = showTooltipCooldownTimer;
         }
 
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
-            cmd.writeShort(actionStyle);
             cmd.AddBytes(timer.write());
-            cmd.writeInt(Id >> 3 | Id << 29);
-            cmd.AddBytes(varB3M.write());
             cmd.writeShort(counterType);
+            cmd.writeShort(-3158);
+            cmd.AddBytes(varB3M.write());
+            cmd.writeBoolean(showTooltipCooldownTimer);
             cmd.AddBytes(status.write());
-            cmd.writeShort(13564);
+            cmd.writeInt(Id >> 5 | Id << 27);
+            cmd.writeShort(-10266);
+            cmd.writeShort(actionStyle);
             return cmd.Message.ToArray();
         }
     }

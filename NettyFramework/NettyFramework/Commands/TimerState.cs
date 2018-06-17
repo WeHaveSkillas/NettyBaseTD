@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class TimerState
     {
-        public const short ID = 8825;
+        public const short ID = 23246;
 
         public static short COOLDOWN = 2;
         public static short READY = 0;
@@ -20,8 +20,9 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
+            cmd.writeShort(26576);
             cmd.writeShort(value);
-            cmd.writeShort(18232);
+            cmd.writeShort(-5564);
             return cmd.Message.ToArray();
         }
 

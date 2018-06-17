@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarItemStatus
     {
-        public const short ID = 15995;
+        public const short ID = 7290;
 
         public static short ORANGE = 6;
         public static short GREEN = 2;
@@ -48,42 +48,40 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
-            cmd.writeUTF(iconLootId);
-            cmd.writeBoolean(selected);
-            cmd.writeBoolean(activatable);
-            cmd.writeBoolean(buyable);
-            cmd.writeUTF(clickedId);
-            cmd.writeDouble(maxCounterValue);
-            cmd.writeBoolean(blocked);
+            cmd.writeBoolean(this.selected);
             cmd.AddBytes(toolTipSlotBar.write());
-            cmd.writeBoolean(visible);
-            cmd.writeShort(counterStyle);
-            cmd.writeBoolean(available);
+            cmd.writeDouble(this.maxCounterValue);
+            cmd.writeShort(31902);
+            cmd.writeBoolean(this.available);
+            cmd.writeShort(this.counterStyle);
+            cmd.writeBoolean(this.blocked);
             cmd.AddBytes(toolTipItemBar.write());
-            cmd.writeShort(9774);
-            cmd.writeShort(-14937);
-            cmd.writeDouble(counterValue);
+            cmd.writeUTF(clickedId);
+            cmd.writeBoolean(this.visible);
+            cmd.writeDouble(this.counterValue);
+            cmd.writeBoolean(this.buyable);
+            cmd.writeBoolean(this.activatable);
+            cmd.writeUTF(this.iconLootId);
             return cmd.Message.ToArray();
         }
 
         public byte[] write2()
         {
             var cmd = new ByteArray(ID);
-            cmd.writeUTF(iconLootId);
-            cmd.writeBoolean(selected);
-            cmd.writeBoolean(activatable);
-            cmd.writeBoolean(buyable);
-            cmd.writeUTF(clickedId);
-            cmd.writeDouble(maxCounterValue);
-            cmd.writeBoolean(blocked);
+            cmd.writeBoolean(this.selected);
             cmd.AddBytes(toolTipSlotBar.write());
-            cmd.writeBoolean(visible);
-            cmd.writeShort(counterStyle);
-            cmd.writeBoolean(available);
+            cmd.writeDouble(this.maxCounterValue);
+            cmd.writeShort(31902);
+            cmd.writeBoolean(this.available);
+            cmd.writeShort(this.counterStyle);
+            cmd.writeBoolean(this.blocked);
             cmd.AddBytes(toolTipItemBar.write());
-            cmd.writeShort(9774);
-            cmd.writeShort(-14937);
-            cmd.writeDouble(counterValue);
+            cmd.writeUTF(clickedId);
+            cmd.writeBoolean(this.visible);
+            cmd.writeDouble(this.counterValue);
+            cmd.writeBoolean(this.buyable);
+            cmd.writeBoolean(this.activatable);
+            cmd.writeUTF(this.iconLootId);
             return cmd.ToByteArray();
         }
 

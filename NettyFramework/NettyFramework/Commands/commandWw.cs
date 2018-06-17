@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class commandWw
     {
-        public const short ID = 3660;
+        public const short ID = 2274;
 
         public static short LO = 7;
 
@@ -32,6 +32,7 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
+            cmd.writeShort(1129);
             cmd.writeShort(type);
             return cmd.Message.ToArray();
         }

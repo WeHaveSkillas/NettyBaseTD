@@ -8,7 +8,7 @@ namespace NettyFramework.Commands
         public static short STANDARD = 0;
         public static short RED = 1;
 
-        public const short ID = 1623;
+        public const short ID = 18148;
 
         public List<commandF5> vard3d;
 
@@ -30,14 +30,13 @@ namespace NettyFramework.Commands
         {
             var cmd = new ByteArray(ID);
             cmd.writeInt(vard3d.Count);
-            foreach (var c in vard3d)
+            foreach(var _loc2_ in this.vard3d)
             {
-                cmd.AddBytes(c.write());
+                cmd.AddBytes(_loc2_.write());
             }
-            cmd.writeUTF(baseKey);
-            cmd.writeShort(-20953);
-            cmd.AddBytes(varT1J.write());
             cmd.writeShort(textColor);
+            cmd.writeUTF(this.baseKey);
+            cmd.AddBytes(varT1J.write());
             return cmd.Message.ToArray();
         }
     }

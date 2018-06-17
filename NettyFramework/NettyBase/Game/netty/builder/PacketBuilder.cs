@@ -35,6 +35,34 @@ namespace NettyBase.Game.netty.builder
                 0, (int) player.RankId, player.Clan.Tag, 100, false, player.Invisible, true, new List<VisualModifierCommand>()));
         }
         #endregion
+
+        #region Settings
+
+        public void SendUserSettings()
+        {
+            //Todo: add windows
+            SlotbarsCommand();
+        }
+
+        public void SlotbarsCommand()
+        {
+            var player = _session.Player;
+            var slotbars = new List<SlotbarQuickslotModule>
+            {
+                new SlotbarQuickslotModule("standardSlotBar",
+                    player.Settings.Slotbar.QuickslotItems, "50,85|0,40",
+                    "0", true),
+                new SlotbarQuickslotModule("premiumSlotBar",
+                    player.Settings.Slotbar.PremiumQuickslotItems, "50,85|0,80", "0", true)
+            };
+            execute(
+                NettyFramework.Commands.SlotbarsCommand
+                    .write(player.Settings.Slotbar.GetCategories(player), "50,85", slotbars)
+            );
+        }
+
+        #endregion
+
         #endregion
 
     }

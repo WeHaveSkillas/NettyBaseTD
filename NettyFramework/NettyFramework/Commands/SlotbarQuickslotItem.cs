@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarQuickslotItem
     {
-        public const short ID = 9992;
+        public const short ID = 32562;
 
         public int slotId;
         public string lootId;
@@ -18,7 +18,7 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
-            cmd.writeInt(slotId >> 3 | slotId << 29);
+            cmd.writeInt(this.slotId << 16 | this.slotId >> 16);
             cmd.writeUTF(lootId);
             return cmd.Message.ToArray();
         }

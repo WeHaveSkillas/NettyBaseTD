@@ -4,7 +4,7 @@ namespace NettyFramework.Commands
 {
     public class SlotbarCategoryItemTimerModule
     {
-        public const short ID = 10021;
+        public const short ID = 23030;
 
         public TimerState timerState;
         public string var14v = "";
@@ -24,26 +24,22 @@ namespace NettyFramework.Commands
         public byte[] write()
         {
             var cmd = new ByteArray(ID);
+            cmd.writeDouble(this.maxTime);
             cmd.AddBytes(timerState.write());
+            cmd.writeBoolean(this.activatable);
+            cmd.writeDouble(this.time);
             cmd.writeUTF(var14v);
-            cmd.writeShort(-7628);
-            cmd.writeDouble(time);
-            cmd.writeBoolean(activatable);
-            cmd.writeShort(19606);
-            cmd.writeDouble(maxTime);
             return cmd.Message.ToArray();
         }
 
         public byte[] write2()
         {
             var cmd = new ByteArray(ID);
+            cmd.writeDouble(this.maxTime);
             cmd.AddBytes(timerState.write());
+            cmd.writeBoolean(this.activatable);
+            cmd.writeDouble(this.time);
             cmd.writeUTF(var14v);
-            cmd.writeShort(-7628);
-            cmd.writeDouble(time);
-            cmd.writeBoolean(activatable);
-            cmd.writeShort(19606);
-            cmd.writeDouble(maxTime);
             return cmd.ToByteArray();
         }
     }

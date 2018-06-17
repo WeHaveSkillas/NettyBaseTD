@@ -23,6 +23,7 @@ namespace NettyBase.Game.controllers.login
             //TODO: Fix
             //Packet.Builder.HotkeysCommand(GameSession);
             //Packet.Builder.UserSettingsCommand(GameSession);
+            GameSession.Builder.SendUserSettings();
             //Packet.Builder.SendUserSettings(GameSession);
         }
 

@@ -5,7 +5,7 @@ namespace NettyFramework.Commands
 {
     public class ClientUITooltip
     {
-        public const short ID = 11872;
+        public const short ID = 31651;
 
         private List<ClientUITooltipTextFormat> textFormat;
 
@@ -22,6 +22,7 @@ namespace NettyFramework.Commands
             {
                 cmd.AddBytes(format.write());
             }
+            cmd.writeShort(10816);
             return cmd.Message.ToArray();
         }
     }

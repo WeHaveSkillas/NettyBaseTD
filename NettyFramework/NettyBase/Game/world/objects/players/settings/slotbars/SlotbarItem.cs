@@ -80,7 +80,7 @@ namespace NettyBase.Game.world.objects.players.settings.slotbars
             var timerModule = new SlotbarCategoryItemTimerModule(ItemId, new TimerState(TimerState.READY), 0, 0, true);
 
             Object = new SlotbarCategoryItemModule(1, itemStatus, timerModule, new CooldownTypeModule(CooldownTypeModule.NONE),
-                CounterType, SlotbarCategoryItemModule.SELECTION);
+                CounterType, SlotbarCategoryItemModule.SELECTION, true);
         }
 
         public byte[] ChangeStatus()
