@@ -99,7 +99,9 @@
     <Compile Include="Game\controllers\player\structs\PlayerBeacon.cs" />
     <Compile Include="Game\managers\DatabaseManager.cs" />
     <Compile Include="Game\managers\StorageManager.cs" />
+    <Compile Include="Game\netty\builder\PacketBuilder.cs" />
     <Compile Include="Game\netty\handler\IHandler.cs" />
+    <Compile Include="Game\netty\handler\LoginHandler.cs" />
     <Compile Include="Game\netty\ModuleFinder.cs" />
     <Compile Include="Game\World.cs" />
     <Compile Include="Game\world\GameSession.cs" />
@@ -360,7 +362,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chat\" />
-    <Folder Include="Game\netty\builder\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NettyFramework\NettyFramework.csproj">

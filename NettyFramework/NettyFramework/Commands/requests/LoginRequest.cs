@@ -9,7 +9,7 @@ namespace NettyFramework.Commands.requests
 {
     public class LoginRequest : IRequestedCommand
     {
-        public const short ID = 23263;
+        public const short ID = 26758;
 
         public int factionID;
         public string sessionID;
@@ -21,14 +21,12 @@ namespace NettyFramework.Commands.requests
         {
             var parser = new ByteParser(bytes);
             factionID = parser.readShort();
-            parser.readShort();
             sessionID = parser.readUTF();
-            instanceId = parser.readInt();
-            instanceId = instanceId >> 6 | instanceId << 26;
-            userID = parser.readInt();
-            userID = userID >> 16 | userID << 16;
-            version = parser.readUTF();
-            parser.readShort();
+            this.instanceId = parser.readInt();
+            this.instanceId = this.instanceId >> 12 | this.instanceId << 20;
+            this.version = parser.readUTF();
+            this.userID = parser.readInt();
+            this.userID = this.userID >> 11 | this.userID << 21;
         }
     }
 }

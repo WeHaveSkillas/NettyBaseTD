@@ -32,8 +32,7 @@ namespace NettyBase.Game.controllers.login
                 player.Storage.Clean();
             }
 
-            //TODO: Fix
-            //Packet.Builder.ShipInitializationCommand(GameSession);
+            GameSession.Builder.ShipInitializationCommand();
             //Packet.Builder.DronesCommand(GameSession, GameSession.Player);
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NettyBase.Game.netty.builder;
 using NettyBase.Game.world.objects;
 using NettyBase.Main;
 using NettyBase.Main.interfaces;
@@ -21,6 +22,9 @@ namespace NettyBase.Game.world
             ERROR
         }
 
+        public PacketBuilder Builder { get; }
+
+
         public Player Player { get; set; }
 
         public GameClient Client { get; set; }
@@ -36,6 +40,7 @@ namespace NettyBase.Game.world
         public GameSession(Player player)
         {
             Player = player;
+            Builder = new PacketBuilder(this);
             Global.TickManager.Add(this);
         }
 

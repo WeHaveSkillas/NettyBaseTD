@@ -48,6 +48,7 @@
     <Compile Include="Commands\CooldownTypeModule.cs" />
     <Compile Include="Commands\requests\IRequestedCommand.cs" />
     <Compile Include="Commands\requests\LoginRequest.cs" />
+    <Compile Include="Commands\ShipInitializationCommand.cs" />
     <Compile Include="Commands\SlotbarCategoryItemModule.cs" />
     <Compile Include="Commands\SlotbarCategoryItemTimerModule.cs" />
     <Compile Include="Commands\SlotbarCategoryModule.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Commands\SlotbarQuickslotModule.cs" />
     <Compile Include="Commands\SlotbarsCommand.cs" />
     <Compile Include="Commands\TimerState.cs" />
+    <Compile Include="Commands\VisualModifierCommand.cs" />
     <Compile Include="Commands\WindowButtonModule.cs" />
     <Compile Include="Commands\WindowsCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
