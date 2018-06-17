@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NettyBase.Networking.chat_server;
+using NettyBase.Networking.game_server;
 
 namespace NettyBase.Networking
 {
@@ -31,7 +33,7 @@ namespace NettyBase.Networking
                     new GameClient(xSocketArgs.XSocket);
                     break;
                 case CHAT_PORT:
-                    new ChatClient(xSocketArgs.XSocket);
+                    //new ChatClient(xSocketArgs.XSocket);
                     break;
                 case POLICY_PORT:
                     new PolicyClient(xSocketArgs.XSocket);

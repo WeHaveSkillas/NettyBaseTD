@@ -19,7 +19,7 @@ namespace NettyFramework.Utils
         {
             Message = new List<byte>();
             NROL = NeedReverseOrLength;
-            Short(ID);
+            writeShort(ID);
         }
 
         public ByteArray(bool NeedReverseOrLenght = false)
@@ -38,7 +38,7 @@ namespace NettyFramework.Utils
             AddBytes(BitConverter.GetBytes(Int32), true);
         }
 
-        public void Short(short Short)
+        public void writeShort(short Short)
         {
             AddBytes(BitConverter.GetBytes(Short), true);
         }
@@ -58,7 +58,7 @@ namespace NettyFramework.Utils
         }
         public void writeUTF(string String)
         {
-            Short((short)String.Length);
+            writeShort((short)String.Length);
             AddBytes(Encoding.Default.GetBytes(String), false);
         }
 

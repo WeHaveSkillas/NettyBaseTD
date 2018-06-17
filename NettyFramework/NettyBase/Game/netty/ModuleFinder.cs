@@ -14,7 +14,7 @@ namespace NettyBase.Game.netty
 
         public static void FindModule(GameClient client, short id, byte[] bytes)
         {
-
+            Console.WriteLine(id + " <<");
         }
     }
 }

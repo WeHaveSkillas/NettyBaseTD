@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NettyFramework.utils;
+using NettyFramework.Utils;
 
 namespace NettyFramework.Commands.requests
 {

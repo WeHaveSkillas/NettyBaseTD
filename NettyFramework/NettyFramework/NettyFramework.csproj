@@ -40,8 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ClientUITooltip.cs" />
+    <Compile Include="Commands\ClientUITooltipTextFormat.cs" />
+    <Compile Include="Commands\commandF5.cs" />
+    <Compile Include="Commands\commandKn.cs" />
+    <Compile Include="Commands\commandWw.cs" />
+    <Compile Include="Commands\CooldownTypeModule.cs" />
     <Compile Include="Commands\requests\IRequestedCommand.cs" />
     <Compile Include="Commands\requests\LoginRequest.cs" />
+    <Compile Include="Commands\SlotbarCategoryItemModule.cs" />
+    <Compile Include="Commands\SlotbarCategoryItemTimerModule.cs" />
+    <Compile Include="Commands\SlotbarCategoryModule.cs" />
+    <Compile Include="Commands\SlotbarItemStatus.cs" />
+    <Compile Include="Commands\SlotbarQuickslotItem.cs" />
+    <Compile Include="Commands\SlotbarQuickslotModule.cs" />
+    <Compile Include="Commands\SlotbarsCommand.cs" />
+    <Compile Include="Commands\TimerState.cs" />
+    <Compile Include="Commands\WindowButtonModule.cs" />
+    <Compile Include="Commands\WindowsCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Bytes.cs" />
   </ItemGroup>
